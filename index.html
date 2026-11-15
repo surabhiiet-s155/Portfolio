@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Surabhi Subhas Chandra - 3rd Year Computer Science & Engineering Undergraduate Portfolio. Best Intern Awardee at Abhimo Technologies, NxtWave CCBP Fellow, Full-Stack Developer, and SDE Aspirant.">
+    <meta name="keywords" content="Surabhi Subhas Chandra, Computer Science, 3rd Year CSE, SUIET, Abhimo Technologies Best Intern, NxtWave Fellow, Three.js 3D Portfolio, Full-Stack Developer">
+    <meta name="author" content="Surabhi Subhas Chandra">
+
+    <title>Surabhi Subhas Chandra | Software Developer & CSE Student</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 3D Golden Celestial Starfield Canvas -->
+    <div id="canvas-container" aria-hidden="true"></div>
+
+    <!-- Floating Minimal Petals -->
+    <div class="floating-petal-container" aria-hidden="true">
+        <div class="petal" style="left: 10%; width: 18px; height: 18px; animation-duration: 16s; animation-delay: 0s;"></div>
+        <div class="petal" style="left: 28%; width: 14px; height: 14px; animation-duration: 22s; animation-delay: 3s;"></div>
+        <div class="petal" style="left: 55%; width: 22px; height: 22px; animation-duration: 19s; animation-delay: 1.5s;"></div>
+        <div class="petal" style="left: 75%; width: 16px; height: 16px; animation-duration: 24s; animation-delay: 5s;"></div>
+        <div class="petal" style="left: 90%; width: 20px; height: 20px; animation-duration: 18s; animation-delay: 2s;"></div>
+    </div>
+
+    <!-- Interactive Cursor Elements -->
+    <div id="cursor-glow" aria-hidden="true"></div>
+    <canvas id="cursor-trail-canvas" aria-hidden="true"></canvas>
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress"></div>
+
+    <!-- Floating WhatsApp Quick Connect Pill -->
+    <a href="https://wa.me/917204853544?text=Hello%20Surabhi,%20I%20reviewed%20your%20CSE%20portfolio%20and%20would%20love%20to%20discuss%20an%20SDE%20opportunity%20with%20you." target="_blank" rel="noopener noreferrer" class="whatsapp-float-widget" title="Message Surabhi directly on WhatsApp" aria-label="Message on WhatsApp">
+        <span class="whatsapp-pulse-ring"></span>
+        <i class="fa-brands fa-whatsapp text-xl"></i>
+        <span>Chat on WhatsApp</span>
+    </a>
+
+    <!-- Top Navigation Bar -->
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="#hero" class="brand-logo" aria-label="Surabhi Home">
+                    <span class="brand-icon"><i class="fa-solid fa-code"></i></span>
+                    <span class="brand-text">&lt;Surabhi /&gt;</span>
+                </a>
+
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#nxtwave" class="nav-link">NxtWave Track</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#skills" class="nav-link">Skills & Tools</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#achievements" class="nav-link">Badges & Certs</a></li>
+                    <li><a href="#terminal" class="nav-link">Terminal</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="sound-btn" id="sound-toggle-btn" title="Toggle UI sound effects" aria-label="Toggle Sound">
+                        <i class="fa-solid fa-volume-xmark"></i> Sound: OFF
+                    </button>
+                    <a href="#contact" class="btn-resume">
+                        <i class="fa-solid fa-paper-plane"></i> Contact Me
+                    </a>
+                    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section (Master Card Layout Matching Your Screenshot!) -->
+        <section class="section hero-section" id="hero">
+            <div class="hero-showcase-mastercard shine-card">
+                <!-- Left Side: Introduction & Buttons -->
+                <div class="hero-text-block">
+                    <div class="hero-pill-badge">
+                        <span class="status-dot"></span>
+                        <span>Open to Internships & Software Developer Roles</span>
+                    </div>
+
+                    <div class="hero-greeting-small">
+                        <span>Hello, Namaste. I am</span>
+                    </div>
+
+                    <h1 class="hero-heading-main">
+                        Surabhi <span class="hero-heading-gradient">Subhas Chandra</span>
+                    </h1>
+
+                    <div class="hero-typewriter-line">
+                        <span id="typewriter-text"></span>
+                        <span class="typewriter-cursor"></span>
+                    </div>
+
+                    <p class="hero-motto-quote">
+                        “Building real-world solutions through code, consistency, and continuous learning.”
+                    </p>
+
+                    <!-- 3 Action Buttons from Screenshot -->
+                    <div class="hero-action-buttons">
+                        <a href="#projects" class="btn-hero-dark">
+                            <i class="fa-solid fa-rocket"></i> View Projects
+                        </a>
+                        <a href="https://wa.me/917204853544?text=Hello%20Surabhi,%20I%20reviewed%20your%20portfolio%20and%20would%20love%20to%20collaborate%20on%20building%20a%20website%20or%20software%20project." target="_blank" rel="noopener noreferrer" class="btn-hero-orange">
+                            <i class="fa-solid fa-laptop-code"></i> Build A Website / WhatsApp
+                        </a>
+                        <a href="#contact" class="btn-hero-cyan">
+                            <i class="fa-solid fa-paper-plane"></i> Contact Me
+                        </a>
+                    </div>
+
+                    <!-- Social Icons Row & Profile Views Badge -->
+                    <div class="flex items-center gap-4 flex-wrap">
+                        <div class="hero-social-row" style="margin-bottom: 0;">
+                            <a href="https://github.com/surabhiiet-s155" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="GitHub Profile">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/surabhi-subhas-chandra/" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="LinkedIn Profile">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.instagram.com/_surabhi21.5/" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="Instagram: @_surabhi21.5">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="mailto:asurabhisubhaschandra@gmail.com" class="social-circle-btn" title="Send Email">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                            <a href="https://wa.me/917204853544" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="Chat on WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+
+                        <!-- Live Profile Views Pill Badge -->
+                        <div class="profile-views-pill">
+                            <span>Profile Views</span>
+                            <span class="views-num">284+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Exact Photo Frame with 2 Floating Micro-Cards -->
+                <div class="hero-photo-showcase-wrap">
+                    <div class="photo-frame-enclosure shine-card">
+                        <!-- Floating Micro-Card 1: Top-Right (Open To Roles) -->
+                        <div class="floating-card-top-right">
+                            <div class="card-icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <div>
+                                <div class="card-title">Open To Roles</div>
+                                <div class="card-sub">Software & Intern</div>
+                            </div>
+                        </div>
+
+                        <!-- Real Professional Blazer Photo of Surabhi -->
+                        <img src="assets/profile.jpg" alt="Surabhi Subhas Chandra" class="photo-frame-image" id="profile-avatar-img" onerror="this.src='https://ui-avatars.com/api/?name=Surabhi+Subhas+Chandra&background=c2410c&color=fff&size=512';">
+
+                        <!-- Floating Micro-Card 2: Bottom-Left (Best Intern Award) -->
+                        <div class="floating-card-bottom-left" data-cert-id="best-intern" style="cursor: pointer;">
+                            <div class="card-icon">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div>
+                                <div class="card-title">Best Intern Award</div>
+                                <div class="card-sub">Abhimo Tech</div>
+                            </div>
+                        </div>
+
+                        <!-- Click to Switch / Upload Photo -->
+                        <label for="profile-photo-input" class="photo-overlay-click photo-upload-label" title="Change or update profile photo">
+                            <i class="fa-solid fa-camera"></i> Change Photo
+                        </label>
+                    </div>
+
+                    <!-- Hidden File Input for Real-Time Photo Insertion -->
+                    <input type="file" id="profile-photo-input" class="photo-input-hidden" accept="image/*" aria-label="Upload profile photo">
+                </div>
+            </div>
+
+            <!-- Stats Bar: 4 Large Grand Showcase Cards Below Introduction & Photo -->
+            <div class="stats-banner hero-large-stats" id="stats">
+                <!-- Card 1: 3rd Year B.Tech CSE -->
+                <div class="stat-card shine-card">
+                    <div class="stat-icon-wrapper grad-orange">
+                        <i class="fa-solid fa-graduation-cap stat-icon"></i>
+                    </div>
+                    <div class="stat-number-wrap">
+                        <div class="stat-number" data-target="3" data-suffix="rd Yr">0</div>
+                    </div>
+                    <div class="stat-label">3rd Year B.Tech CSE</div>
+                    <div class="stat-subtext">5th Semester • Srinivas University (SUIET)</div>
+                </div>
+
+                <!-- Card 2: 3 Live Production Projects -->
+                <div class="stat-card shine-card" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;" title="Click to view live production projects">
+                    <div class="stat-icon-wrapper grad-cyan">
+                        <i class="fa-solid fa-rocket stat-icon"></i>
+                    </div>
+                    <div class="stat-number-wrap">
+                        <div class="stat-number" data-target="3" data-suffix="+ Live">0</div>
+                    </div>
+                    <div class="stat-label">3+ Live Production Projects</div>
+                    <div class="stat-subtext">Client Deploys & Real-World Web Apps</div>
+                </div>
+
+                <!-- Card 3: Best Intern Awardee -->
+                <div class="stat-card shine-card" data-cert-id="best-intern" style="cursor: pointer;" title="Click to view verified Best Intern Award certificate">
+                    <div class="stat-icon-wrapper grad-amber">
+                        <i class="fa-solid fa-trophy stat-icon"></i>
+                    </div>
+                    <div class="stat-number-wrap">
+                        <div class="stat-number" data-target="1" data-suffix="st Award">0</div>
+                    </div>
+                    <div class="stat-label">Best Intern Awardee</div>
+                    <div class="stat-subtext">Abhimo Technologies • Enterprise Recognition</div>
+                </div>
+
+                <!-- Card 4: Other One Card - 10+ Badges & Certifications -->
+                <div class="stat-card shine-card" onclick="document.getElementById('achievements').scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;" title="Click to view all verified credentials and badges">
+                    <div class="stat-icon-wrapper grad-purple">
+                        <i class="fa-solid fa-medal stat-icon"></i>
+                    </div>
+                    <div class="stat-number-wrap">
+                        <div class="stat-number" data-target="10" data-suffix="+ Earned">0</div>
+                    </div>
+                    <div class="stat-label">10+ Badges & Certifications</div>
+                    <div class="stat-subtext">NPTEL Elite, NxtWave IRC 4.0 & More</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. "Why Recruiters Choose Surabhi" Executive Value Proposition -->
+        <section class="section" style="padding-top: 1rem; padding-bottom: 2rem;">
+            <div class="recruiter-value-banner shine-card">
+                <div style="text-align: center; max-width: 750px; margin: 0 auto;">
+                    <span class="section-tag"><span class="floral-accent">✿</span> Recruiter Highlights</span>
+                    <h2 class="section-title" style="font-size: 2.2rem;">Why Recruiters Choose Surabhi</h2>
+                    <p class="section-subtitle">A high-potential 3rd-year engineering student blending rapid conceptual grasp with verified production releases.</p>
+                </div>
+
+                <div class="recruiter-grid">
+                    <div class="recruiter-box shine-card">
+                        <i class="fa-solid fa-brain recruiter-box-icon"></i>
+                        <h3 class="recruiter-box-title">High IQ & Rapid Learning Curve</h3>
+                        <p class="recruiter-box-desc">
+                            Demonstrated capacity to master complex software engineering frameworks, design patterns, and programming languages in record time with deep conceptual comprehension.
+                        </p>
+                    </div>
+
+                    <div class="recruiter-box shine-card">
+                        <i class="fa-solid fa-trophy recruiter-box-icon"></i>
+                        <h3 class="recruiter-box-title">Ranked #1 Best Intern</h3>
+                        <p class="recruiter-box-desc">
+                            Conferred top recognition over peers at Abhimo Technologies for delivering high-velocity, production-ready user interfaces and maintaining clean Git version standards.
+                        </p>
+                    </div>
+
+                    <div class="recruiter-box shine-card">
+                        <i class="fa-solid fa-cloud-arrow-up recruiter-box-icon"></i>
+                        <h3 class="recruiter-box-title">3x Production Tested</h3>
+                        <p class="recruiter-box-desc">
+                            Unlike purely theoretical students, Surabhi has already architected and shipped 3 commercial client web applications with DNS mapping, asset optimization, and mobile responsiveness.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Dedicated NxtWave CCBP 4.0 Journey Spotlight -->
+        <section class="section" id="nxtwave">
+            <div class="section-header">
+                <span class="section-tag"><span class="floral-accent">✿</span> Specialized Training</span>
+                <h2 class="section-title">The NxtWave CCBP 4.0 Journey</h2>
+                <p class="section-subtitle">Industry-ready full-stack engineering, continuous coding sprints, and rigorous algorithmic problem solving.</p>
+            </div>
+
+            <div class="nxtwave-spotlight-card shine-card">
+                <div class="nxtwave-header">
+                    <div class="nxtwave-logo-badge">
+                        <div class="nxtwave-icon-box">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h3 class="nxtwave-title">Fellow — NxtWave CCBP 4.0 Academy</h3>
+                            <div class="nxtwave-tagline">Full-Stack Web Development & Data Structures & Algorithms (DSA) Track</div>
+                        </div>
+                    </div>
+                    <span class="award-badge-ribbon" data-cert-id="nxtwave-fellow">
+                        <i class="fa-solid fa-certificate"></i> Verified Fellow
+                    </span>
+                </div>
+
+                <p class="text-body text-base leading-relaxed mb-4">
+                    As an active <strong>NxtWave CCBP 4.0 Academy Fellow</strong>, Surabhi has undergone intensive industry-aligned software engineering preparation. The program focuses on building production-grade full-stack architectures, mastering responsive design semantics, and solving algorithmic problems under real-world engineering constraints.
+                </p>
+
+                <div class="nxtwave-milestones-grid">
+                    <div class="nxtwave-milestone-item shine-card">
+                        <div class="nxtwave-milestone-title">
+                            <i class="fa-solid fa-code text-orange-600"></i> Full-Stack Architecture
+                        </div>
+                        <p class="nxtwave-milestone-desc">
+                            Mastered HTML5, CSS3, modern JavaScript ES6+, Python, and responsive component systems, with focus on modular code reusability.
+                        </p>
+                    </div>
+
+                    <div class="nxtwave-milestone-item shine-card">
+                        <div class="nxtwave-milestone-title">
+                            <i class="fa-solid fa-diagram-project text-orange-600"></i> Data Structures & Algorithms
+                        </div>
+                        <p class="nxtwave-milestone-desc">
+                            Continuous practice in time-and-space complexity analysis, array manipulations, search/sort mechanics, and object-oriented logic.
+                        </p>
+                    </div>
+
+                    <div class="nxtwave-milestone-item shine-card">
+                        <div class="nxtwave-milestone-title">
+                            <i class="fa-solid fa-check-double text-emerald-600"></i> Validated Mock Assessments
+                        </div>
+                        <p class="nxtwave-milestone-desc">
+                            Successfully evaluated in live technical mock interviews testing Box Model spatial relationships, DOM trees, and responsive styling.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exp-actions" style="margin-top: 2rem;">
+                    <button class="btn-primary" data-cert-id="nxtwave-fellow">
+                        <i class="fa-solid fa-award"></i> View NxtWave Fellowship Credential
+                    </button>
+                    <button class="btn-secondary" data-cert-id="nxtwave-mock">
+                        <i class="fa-solid fa-clipboard-check"></i> View Mock Interview Assessment
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Skills & Tools (With Stitch & Antigravity Icons Highlighted) -->
+        <section class="section" id="skills">
+            <div class="section-header">
+                <span class="section-tag"><span class="floral-accent">✿</span> Engineering Stack</span>
+                <h2 class="section-title">Skills, Tools & Frameworks</h2>
+                <p class="section-subtitle">Every language, tool, and modern AI capability mastered — highlighted in dedicated visual badges.</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- 1. Programming Languages -->
+                <div class="skill-category-card shine-card">
+                    <div class="skill-cat-header">
+                        <i class="fa-solid fa-code skill-cat-icon"></i>
+                        <h3 class="skill-cat-title">Programming Languages</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-chip"><i class="fa-brands fa-java"></i> Java (Core & OOP)</span>
+                        <span class="skill-chip"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</span>
+                        <span class="skill-chip"><i class="fa-brands fa-python"></i> Python</span>
+                        <span class="skill-chip"><i class="fa-solid fa-c"></i> C Language</span>
+                        <span class="skill-chip"><i class="fa-solid fa-file-code"></i> C++</span>
+                        <span class="skill-chip"><i class="fa-solid fa-database"></i> SQL (MySQL)</span>
+                    </div>
+                </div>
+
+                <!-- 2. Modern Tools & AI Systems (Highlighting Stitch & Antigravity) -->
+                <div class="skill-category-card shine-card">
+                    <div class="skill-cat-header">
+                        <i class="fa-solid fa-atom skill-cat-icon"></i>
+                        <h3 class="skill-cat-title">Modern AI & Design Tools</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <!-- Stitch Icon Highlight -->
+                        <span class="skill-chip skill-highlight-special" title="Stitch UI Design System">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Stitch UI System
+                        </span>
+                        <!-- Google Antigravity Highlight -->
+                        <span class="skill-chip skill-highlight-special" title="Google Antigravity Agentic Coding">
+                            <i class="fa-solid fa-atom"></i> Antigravity Agentic
+                        </span>
+                        <span class="skill-chip"><i class="fa-solid fa-robot"></i> Prompt Engineering</span>
+                        <span class="skill-chip"><i class="fa-solid fa-comment-dots"></i> Chatbot Architecture</span>
+                        <span class="skill-chip"><i class="fa-solid fa-microchip"></i> LLM Workflows</span>
+                    </div>
+                </div>
+
+                <!-- 3. Web & Frontend -->
+                <div class="skill-category-card shine-card">
+                    <div class="skill-cat-header">
+                        <i class="fa-solid fa-desktop skill-cat-icon"></i>
+                        <h3 class="skill-cat-title">Frontend Engineering</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-chip"><i class="fa-brands fa-html5"></i> HTML5 Semantic</span>
+                        <span class="skill-chip"><i class="fa-brands fa-css3-alt"></i> CSS3 & Animations</span>
+                        <span class="skill-chip"><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
+                        <span class="skill-chip"><i class="fa-solid fa-palette"></i> Tailwind CSS</span>
+                        <span class="skill-chip"><i class="fa-solid fa-cube"></i> Three.js / WebGL</span>
+                        <span class="skill-chip"><i class="fa-solid fa-mobile-screen"></i> Responsive UI/UX</span>
+                    </div>
+                </div>
+
+                <!-- 4. Backend & Databases -->
+                <div class="skill-category-card shine-card">
+                    <div class="skill-cat-header">
+                        <i class="fa-solid fa-server skill-cat-icon"></i>
+                        <h3 class="skill-cat-title">Backend & Databases</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-chip"><i class="fa-brands fa-node-js"></i> Node.js Basics</span>
+                        <span class="skill-chip"><i class="fa-solid fa-flask"></i> Python Flask</span>
+                        <span class="skill-chip"><i class="fa-solid fa-leaf"></i> MongoDB</span>
+                        <span class="skill-chip"><i class="fa-solid fa-database"></i> MySQL Schemas</span>
+                        <span class="skill-chip"><i class="fa-solid fa-plug"></i> RESTful APIs</span>
+                        <span class="skill-chip"><i class="fa-solid fa-shield-halved"></i> App Security</span>
+                    </div>
+                </div>
+
+                <!-- 5. Developer Tools & DevOps -->
+                <div class="skill-category-card shine-card">
+                    <div class="skill-cat-header">
+                        <i class="fa-solid fa-toolbox skill-cat-icon"></i>
+                        <h3 class="skill-cat-title">Developer Tools</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-chip"><i class="fa-brands fa-git-alt"></i> Git Version Control</span>
+                        <span class="skill-chip"><i class="fa-brands fa-github"></i> GitHub CI/CD</span>
+                        <span class="skill-chip"><i class="fa-solid fa-laptop-code"></i> VS Code</span>
+                        <span class="skill-chip"><i class="fa-brands fa-android"></i> Android Studio</span>
+                        <span class="skill-chip"><i class="fa-solid fa-paper-plane"></i> Postman</span>
+                        <span class="skill-chip"><i class="fa-brands fa-linux"></i> Linux / Bash</span>
+                    </div>
+                </div>
+
+                <!-- 6. Core Computer Science Fundamentals -->
+                <div class="skill-category-card shine-card">
+                    <div class="skill-cat-header">
+                        <i class="fa-solid fa-brain skill-cat-icon"></i>
+                        <h3 class="skill-cat-title">Core Computer Science</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-chip"><i class="fa-solid fa-diagram-project"></i> Data Structures</span>
+                        <span class="skill-chip"><i class="fa-solid fa-gear"></i> Algorithms</span>
+                        <span class="skill-chip"><i class="fa-solid fa-cubes"></i> Object-Oriented (OOP)</span>
+                        <span class="skill-chip"><i class="fa-solid fa-network-wired"></i> Computer Networks</span>
+                        <span class="skill-chip"><i class="fa-solid fa-microchip"></i> Operating Systems</span>
+                        <span class="skill-chip"><i class="fa-solid fa-pen-ruler"></i> Conceptual Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Comprehensive Badges & Certifications Showcase (10+ Verified) -->
+        <section class="section" id="achievements">
+            <div class="section-header">
+                <span class="section-tag"><span class="floral-accent">✿</span> Verified Credentials</span>
+                <h2 class="section-title">Badges, Awards & Certifications</h2>
+                <p class="section-subtitle">A comprehensive showcase of verified honors, government elite certifications, and competitive recognitions.</p>
+            </div>
+
+            <div class="filter-tabs-wrapper">
+                <button class="filter-tab active" data-cert-filter="all">All Badges & Certs (10)</button>
+                <button class="filter-tab" data-cert-filter="awards">Awards & Recognitions</button>
+                <button class="filter-tab" data-cert-filter="certifications">Certifications</button>
+                <button class="filter-tab" data-cert-filter="events">Research & Competitions</button>
+            </div>
+
+            <div class="certs-grid">
+                <!-- 1. Best Intern Award -->
+                <div class="cert-card shine-card" data-cert-category="awards" data-cert-id="best-intern">
+                    <span class="cert-badge-type badge-award">
+                        <i class="fa-solid fa-trophy"></i> Top 1% Intern Honor
+                    </span>
+                    <h3 class="cert-title">Best Intern Award</h3>
+                    <div class="cert-issuer">Abhimo Technologies Private Limited</div>
+                    <p class="cert-desc">
+                        Honored with the highest recognition among all engineering interns for stellar UI development, high velocity, and shipping 3 production deployments.
+                    </p>
+                    <div class="cert-footer">
+                        <span>April 2026</span>
+                        <span class="cert-view-cta">View Details & Photo <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- 2. NPTEL Elite Certification -->
+                <div class="cert-card shine-card" data-cert-category="certifications" data-cert-id="nptel-scd">
+                    <span class="cert-badge-type badge-cert">
+                        <i class="fa-solid fa-certificate"></i> Govt. Elite Certified (60%)
+                    </span>
+                    <h3 class="cert-title">Software Conceptual Design</h3>
+                    <div class="cert-issuer">NPTEL | Ministry of Education, Govt. of India & IIT</div>
+                    <p class="cert-desc">
+                        Elite certificate in formal software conceptual modeling, behavioral views, requirements analysis, and structural specifications (Score: 60%, 2 Credits).
+                    </p>
+                    <div class="cert-footer">
+                        <span>Roll: NPTEL26CS185S674201360</span>
+                        <span class="cert-view-cta">Inspect Certificate PDF <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- 3. NxtWave CCBP 4.0 Academy Fellow -->
+                <div class="cert-card shine-card" data-cert-category="certifications" data-cert-id="nxtwave-fellow">
+                    <span class="cert-badge-type badge-cert">
+                        <i class="fa-solid fa-award"></i> Professional Fellow
+                    </span>
+                    <h3 class="cert-title">NxtWave CCBP 4.0 Fellow</h3>
+                    <div class="cert-issuer">NxtWave Academy</div>
+                    <p class="cert-desc">
+                        Comprehensive professional track mastering full-stack web engineering, Python problem solving, responsive UI development, and data structures.
+                    </p>
+                    <div class="cert-footer">
+                        <span>Industry Track</span>
+                        <span class="cert-view-cta">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- 4. NxtWave HTML & CSS Mock Technical Assessment -->
+                <div class="cert-card shine-card" data-cert-category="certifications" data-cert-id="nxtwave-mock">
+                    <span class="cert-badge-type badge-cert">
+                        <i class="fa-solid fa-check-double"></i> Technical Interview
+                    </span>
+                    <h3 class="cert-title">HTML & CSS Mock Assessment</h3>
+                    <div class="cert-issuer">NxtWave Evaluation Board</div>
+                    <p class="cert-desc">
+                        Validated technical proficiency in HTML semantic markup, CSS Box Model, spatial margins/padding, DOM manipulation, and responsive web design.
+                    </p>
+                    <div class="cert-footer">
+                        <span>Verified Evaluation</span>
+                        <span class="cert-view-cta">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- 5. Tech Yuva 2026 - Mind Print Presentation -->
+                <div class="cert-card shine-card" data-cert-category="events" data-cert-id="mind-print">
+                    <span class="cert-badge-type badge-event">
+                        <i class="fa-solid fa-newspaper"></i> Research Paper
+                    </span>
+                    <h3 class="cert-title">"Mind Print" Tech Yuva 2026</h3>
+                    <div class="cert-issuer">National Technical Symposium</div>
+                    <p class="cert-desc">
+                        Presented research paper on "Impact of Social Media Algorithms on Youth Behavior" analyzing user engagement feedback loops and digital awareness.
+                    </p>
+                    <div class="cert-footer">
+                        <span>Tech Yuva 2026</span>
+                        <span class="cert-view-cta">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- 6. Prompt Buddy AI Championship -->
+                <div class="cert-card shine-card" data-cert-category="events" data-cert-id="prompt-buddy">
+                    <span class="cert-badge-type badge-event">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> AI Competition
+                    </span>
+                    <h3 class="cert-title">Prompt Buddy AI Event</h3>
+                    <div class="cert-issuer">Srinivas University Technical Council</div>
+                    <p class="cert-desc">
+                        Tested prompt engineering capabilities, generative AI steering, and algorithmic problem generation in a university-level competition.
+                    </p>
+                    <div class="cert-footer">
+                        <span>Technical Event</span>
+                        <span class="cert-view-cta">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- 7. 3x Live Production Deployments Milestone -->
+                <div class="cert-card shine-card" data-cert-category="awards" data-cert-id="production-deploy">
+                    <span class="cert-badge-type badge-award">
+                        <i class="fa-solid fa-cloud-arrow-up"></i> Engineering Milestone
+                    </span>
+                    <h3 class="cert-title">3x Production Deployments</h3>
+                    <div class="cert-issuer">Abhimo Technologies & Live Web</div>
+                    <p class="cert-desc">
+                        Engineered and deployed 3 live client commercial web portals with domain mapping, CDN caching, and 100% responsiveness on mobile & desktop.
+                    </p>
+                    <div class="cert-footer">
+                        <span>Verified Production</span>
+                        <span class="cert-view-cta">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- 8. Blockchain Governance Research -->
+                <div class="cert-card shine-card" data-cert-category="events" data-cert-id="blockchain-res">
+                    <span class="cert-badge-type badge-event">
+                        <i class="fa-solid fa-cubes"></i> Systems Monograph
+                    </span>
+                    <h3 class="cert-title">Blockchain in Judiciary</h3>
+                    <div class="cert-issuer">Department of CSE, SUIET</div>
+                    <p class="cert-desc">
+                        Authored research paper analyzing immutable distributed ledgers and smart contracts for tamper-proof case records in the Indian judiciary.
+                    </p>
+                    <div class="cert-footer">
+                        <span>Academic Research</span>
+                        <span class="cert-view-cta">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- 9. CodeAlpha Python Internship -->
+                <div class="cert-card shine-card" data-cert-category="certifications" data-cert-id="codealpha-intern">
+                    <span class="cert-badge-type badge-cert">
+                        <i class="fa-brands fa-python"></i> Python Dev
+                    </span>
+                    <h3 class="cert-title">CodeAlpha Python Internship</h3>
+                    <div class="cert-issuer">CodeAlpha Technologies</div>
+                    <p class="cert-desc">
+                        Engineered algorithmic console tools, state-machine games, and mathematical utilities during practical programming modules.
+                    </p>
+                    <div class="cert-footer">
+                        <span>Practical Track</span>
+                        <span class="cert-view-cta">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- 10. Academic Distinction -->
+                <div class="cert-card shine-card" data-cert-category="awards" data-cert-id="academic-distinction">
+                    <span class="cert-badge-type badge-award">
+                        <i class="fa-solid fa-star"></i> Academic Track
+                    </span>
+                    <h3 class="cert-title">Academic Distinction in CSE</h3>
+                    <div class="cert-issuer">Srinivas University (SUIET)</div>
+                    <p class="cert-desc">
+                        Consistent high academic track record across Core Data Structures, OOPs in Java, DBMS, Computer Networks, and Software Engineering.
+                    </p>
+                    <div class="cert-footer">
+                        <span>Currently 5th Sem</span>
+                        <span class="cert-view-cta">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Professional Experience Section (Abhimo Technologies Spotlight) -->
+        <section class="section" id="experience">
+            <div class="section-header">
+                <span class="section-tag"><span class="floral-accent">✿</span> Work History</span>
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">Real-world impact in software development, production releases, and enterprise teamwork.</p>
+            </div>
+
+            <!-- Spotlight Card: Abhimo Technologies -->
+            <div class="exp-spotlight-card shine-card">
+                <div class="exp-header">
+                    <div class="exp-company-info">
+                        <img src="assets/abhimo_logo.png" alt="Abhimo Technologies Logo" class="company-logo-img">
+                        <div>
+                            <h3 class="exp-title">Software Development Intern</h3>
+                            <div class="exp-company">Abhimo Technologies Private Limited • Mangaluru, India</div>
+                        </div>
+                    </div>
+                    <div class="exp-meta">
+                        <span class="exp-duration">April 2026 - May 2026</span>
+                        <div class="award-badge-ribbon" data-cert-id="best-intern" title="Click to view Best Intern Award ceremony photo">
+                            <i class="fa-solid fa-trophy"></i> Best Intern Awardee
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="exp-bullets">
+                    <li>
+                        <strong>Best Intern Honor:</strong> Conferred the prestigious "Best Intern Award" among engineering peers for exceptional UI design quality, speed of feature delivery, and clean code standards.
+                    </li>
+                    <li>
+                        <strong>Production Web Engineering:</strong> Engineered mobile-first, responsive client web interfaces using <strong>HTML5, CSS3, JavaScript, and Bootstrap 5</strong> with 100% viewport cross-browser compatibility.
+                    </li>
+                    <li>
+                        <strong>Corporate Platform & Chatbot Architecture:</strong> Built the official Abhimo Technologies corporate web portal, service showcase, inquiry submission flows, and an automated customer assistance chatbot.
+                    </li>
+                    <li>
+                        <strong>Live Production Deployments:</strong> Successfully deployed and configured <strong>3 live production websites</strong>, collaborating with senior developers on DNS records, server mapping, and CDN optimization.
+                    </li>
+                    <li>
+                        <strong>Version Control & Collaboration:</strong> Managed branching, pull requests, and multi-developer code merges via Git and GitHub within an Agile development workflow.
+                    </li>
+                </ul>
+
+                <div class="exp-actions">
+                    <button class="btn-primary" data-cert-id="best-intern">
+                        <i class="fa-solid fa-medal"></i> View Award Ceremony Details
+                    </button>
+                    <button class="btn-secondary" data-cert-id="production-deploy">
+                        <i class="fa-solid fa-cloud-arrow-up"></i> View Production Milestone
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Featured Projects Section -->
+        <section class="section" id="projects">
+            <div class="section-header">
+                <span class="section-tag"><span class="floral-accent">✿</span> Portfolio Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Real-world applications, production client deployments, hackathon solutions, and research systems.</p>
+            </div>
+
+            <div class="filter-tabs-wrapper">
+                <button class="filter-tab active" data-project-filter="all">All Projects</button>
+                <button class="filter-tab" data-project-filter="production">Production & Client</button>
+                <button class="filter-tab" data-project-filter="hackathon">Hackathon / AI</button>
+                <button class="filter-tab" data-project-filter="web">Web Applications</button>
+                <button class="filter-tab" data-project-filter="research">Research & Systems</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: FoodBridge AI -->
+                <div class="project-card shine-card" data-category="hackathon ai web">
+                    <div class="project-top">
+                        <i class="fa-regular fa-folder-closed project-folder-icon"></i>
+                        <div class="project-external-links">
+                            <a href="https://github.com/surabhiiet-s155" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View Source on GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <span class="project-category-badge">Hackathon Innovation</span>
+                    <h3 class="project-title">FoodBridge AI Platform</h3>
+                    <p class="project-desc">
+                        An intelligent AI-assisted food distribution and charity platform built during the N_Hackathon. Connects restaurant surplus with verified hunger relief organizations via automated geolocation routing and charity license verification.
+                    </p>
+                    <ul class="project-tech-list">
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>MongoDB</li>
+                        <li>AI Verification</li>
+                        <li>REST API</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2: Abhimo Corporate Platform & AI Bot -->
+                <div class="project-card shine-card" data-category="production web">
+                    <div class="project-top">
+                        <i class="fa-regular fa-folder-closed project-folder-icon"></i>
+                        <div class="project-external-links">
+                            <a href="https://github.com/surabhiiet-s155" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View Source on GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <span class="project-category-badge">Live Production</span>
+                    <h3 class="project-title">Abhimo Corporate Portal & Chatbot</h3>
+                    <p class="project-desc">
+                        Official multi-page enterprise web platform engineered during internship. Includes dynamic career applicant portals, service grids, interactive inquiry forms, and an intelligent automated client assistant chatbot.
+                    </p>
+                    <ul class="project-tech-list">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript ES6</li>
+                        <li>Bootstrap 5</li>
+                        <li>Chatbot UI</li>
+                    </ul>
+                </div>
+
+                <!-- Project 3: Mahalaxmi Industrial Web Portal -->
+                <div class="project-card shine-card" data-category="production web">
+                    <div class="project-top">
+                        <i class="fa-regular fa-folder-closed project-folder-icon"></i>
+                        <div class="project-external-links">
+                            <a href="https://github.com/surabhiiet-s155" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View Source on GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <span class="project-category-badge">Live Production</span>
+                    <h3 class="project-title">Mahalaxmi Industrial Web Portal</h3>
+                    <p class="project-desc">
+                        End-to-end B2B industrial catalog and customer inquiry system. Featuring high-speed asset optimization, categorized machinery inventories, responsive RFQ quotation forms, and client lead management.
+                    </p>
+                    <ul class="project-tech-list">
+                        <li>Responsive UI</li>
+                        <li>Modern JavaScript</li>
+                        <li>CSS Grid</li>
+                        <li>Lead Capture</li>
+                    </ul>
+                </div>
+
+                <!-- Project 4: AI Scam & Phishing Detection Engine -->
+                <div class="project-card shine-card" data-category="hackathon ai">
+                    <div class="project-top">
+                        <i class="fa-regular fa-folder-closed project-folder-icon"></i>
+                        <div class="project-external-links">
+                            <a href="https://github.com/surabhiiet-s155" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View Source on GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <span class="project-category-badge">AI & Cyber Security</span>
+                    <h3 class="project-title">AI Scam Detection Engine</h3>
+                    <p class="project-desc">
+                        Security web application developed with Python and Flask. Scans suspicious URLs, incoming SMS strings, and email content using keyword heuristics and classification metrics to flag fraud patterns.
+                    </p>
+                    <ul class="project-tech-list">
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>HTML/CSS</li>
+                        <li>Heuristic Scoring</li>
+                        <li>NLP Patterns</li>
+                    </ul>
+                </div>
+
+                <!-- Project 5: Blockchain in Governance Framework -->
+                <div class="project-card shine-card" data-category="research">
+                    <div class="project-top">
+                        <i class="fa-regular fa-folder-closed project-folder-icon"></i>
+                        <div class="project-external-links">
+                            <a href="https://github.com/surabhiiet-s155" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View Research Artifact">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <span class="project-category-badge">Academic Research</span>
+                    <h3 class="project-title">Blockchain in Government & Judiciary</h3>
+                    <p class="project-desc">
+                        Comprehensive architecture and research study analyzing immutable distributed ledger technology for tamper-evident digital judicial case records, land registry verification, and public administration transparency.
+                    </p>
+                    <ul class="project-tech-list">
+                        <li>Blockchain DLT</li>
+                        <li>Smart Contracts</li>
+                        <li>Judiciary Protocols</li>
+                        <li>Technical Paper</li>
+                    </ul>
+                </div>
+
+                <!-- Project 6: Interactive Python & Web App Suite -->
+                <div class="project-card shine-card" data-category="web">
+                    <div class="project-top">
+                        <i class="fa-regular fa-folder-closed project-folder-icon"></i>
+                        <div class="project-external-links">
+                            <a href="https://github.com/surabhiiet-s155" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View Source on GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <span class="project-category-badge">DSA & Utility</span>
+                    <h3 class="project-title">Interactive Python & Web Apps</h3>
+                    <p class="project-desc">
+                        Collection of foundational computer science tools including an interactive state-machine Hangman game, dynamic responsive Task Manager with local storage persistence, and numerical computational calculators.
+                    </p>
+                    <ul class="project-tech-list">
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>DOM State Machine</li>
+                        <li>Local Storage</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. About Section & Education Timeline -->
+        <section class="section" id="about">
+            <div class="section-header">
+                <span class="section-tag"><span class="floral-accent">✿</span> Academic Foundations</span>
+                <h2 class="section-title">Education & Core Pillars</h2>
+                <p class="section-subtitle">Bridging strong Computer Science principles with high-velocity hands-on coding.</p>
+            </div>
+
+            <div class="about-grid">
+                <div>
+                    <div class="about-bio-card shine-card">
+                        <p>
+                            I am a <strong>3rd Year Computer Science & Engineering undergraduate</strong> (currently in my 5th semester) at 
+                            <strong>Srinivas University Institute of Engineering and Technology (SUIET)</strong>, Mukka, Mangaluru. 
+                            I combine strong conceptual reasoning with a dedication to writing clean, maintainable, and high-performance code.
+                        </p>
+                        <p>
+                            Having earned the <strong>"Best Intern Award"</strong> at Abhimo Technologies and an <strong>Elite Certification in Software Conceptual Design</strong> 
+                            from NPTEL & IIT Kharagpur, I have proved my ability to quickly absorb complex architectures and translate them into production solutions.
+                        </p>
+
+                        <!-- CSE Pillars -->
+                        <div class="pillars-grid">
+                            <div class="pillar-box">
+                                <i class="fa-solid fa-network-wired pillar-icon"></i>
+                                <span class="pillar-title">Web Engineering</span>
+                                <span class="pillar-desc">Responsive layouts, mobile-first design & component systems</span>
+                            </div>
+                            <div class="pillar-box">
+                                <i class="fa-solid fa-sitemap pillar-icon"></i>
+                                <span class="pillar-title">DSA & Problem Solving</span>
+                                <span class="pillar-desc">Core data structures, object-oriented design & Java</span>
+                            </div>
+                            <div class="pillar-box">
+                                <i class="fa-solid fa-database pillar-icon"></i>
+                                <span class="pillar-title">Data Architectures</span>
+                                <span class="pillar-desc">Relational SQL schema & flexible document MongoDB models</span>
+                            </div>
+                            <div class="pillar-box">
+                                <i class="fa-solid fa-wand-magic-sparkles pillar-icon"></i>
+                                <span class="pillar-title">Modern AI Workflows</span>
+                                <span class="pillar-desc">Prompt engineering, LLM integration & rapid prototyping</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Timeline (Updated PUC with PCMC & Karnataka State Board) -->
+                <div>
+                    <div class="timeline-card shine-card">
+                        <h3 class="timeline-title">
+                            <i class="fa-solid fa-graduation-cap"></i> Academic Pathway
+                        </h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <span class="timeline-dot"></span>
+                                <span class="timeline-time">2024 - Present (3rd Year)</span>
+                                <h4 class="timeline-role">B.Tech in Computer Science & Engineering</h4>
+                                <p class="timeline-inst">Srinivas University Institute of Engineering and Technology (SUIET), Mukka, Mangaluru</p>
+                                <span class="timeline-score">USN: 01SU24CS155 • Currently 5th Semester</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-dot"></span>
+                                <span class="timeline-time">2022 - 2024</span>
+                                <h4 class="timeline-role">Pre-University Course (PUC)</h4>
+                                <p class="timeline-inst">Sri Guru Chaitanya PU College, Ilkal, Karnataka</p>
+                                <span class="timeline-score">Completed PCMC (Physics, Chemistry, Mathematics, Computer Science) • Karnataka State Board</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-dot"></span>
+                                <span class="timeline-time">2021 - 2022</span>
+                                <h4 class="timeline-role">SSLC / High School (10th Standard)</h4>
+                                <p class="timeline-inst">Kendriya Vidyalaya, Hutti Gold Mines, Karnataka</p>
+                                <span class="timeline-score">Central Board of Secondary Education (CBSE)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Interactive CSE Terminal Playground -->
+        <section class="section" id="terminal">
+            <div class="section-header">
+                <span class="section-tag"><span class="floral-accent">✿</span> Developer Playground</span>
+                <h2 class="section-title">CSE Interactive Terminal</h2>
+                <p class="section-subtitle">Type commands to interactively explore background, skills, and developer easter eggs.</p>
+            </div>
+
+            <div class="terminal-container">
+                <div class="terminal-bar">
+                    <div class="holo-terminal-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="terminal-title-text">
+                        <i class="fa-solid fa-code-branch text-orange-600"></i> surabhi@portfolio: ~ (bash)
+                    </div>
+                    <div class="text-xs text-orange-600 font-mono font-bold">v3.0.0-executive-orange</div>
+                </div>
+                <div class="terminal-body" id="terminal-output">
+                    <div class="terminal-welcome">
+                        Welcome to <span class="highlight">Surabhi's Interactive Terminal</span> [3rd Year CSE Edition ✿].<br>
+                        Type <span class="highlight">help</span> to view available commands, or try <span class="highlight">nxtwave</span>, <span class="highlight">badges</span>, <span class="highlight">whatsapp</span>, <span class="highlight">skills</span>, or <span class="highlight">sudo hire</span>.
+                    </div>
+                </div>
+                <div class="terminal-bar" style="border-top: 1.5px solid var(--border-warm); border-bottom: none;">
+                    <div class="terminal-input-row">
+                        <span class="prompt-text">surabhi@cse-terminal:~$</span>
+                        <input type="text" id="terminal-input" class="terminal-input" placeholder="type 'help' and press Enter..." autocomplete="off" spellcheck="false">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Contact Section (With Professional Email & WhatsApp) -->
+        <section class="section" id="contact">
+            <div class="section-header">
+                <span class="section-tag"><span class="floral-accent">✿</span> Get In Touch</span>
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Interested in hiring Surabhi for an SDE Internship / Full-Time role, or discussing web engineering projects?</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Details -->
+                <div class="contact-info-card shine-card">
+                    <h3 class="font-heading text-2xl font-bold text-dark mb-2">Reach Out Directly</h3>
+                    <p class="text-slate-400 text-sm mb-6">
+                        I am currently open to Software Development Engineer (SDE) internships, full-stack opportunities, and technical projects.
+                    </p>
+
+                    <div class="contact-links-list">
+                        <!-- Direct WhatsApp Item -->
+                        <a href="https://wa.me/917204853544?text=Hello%20Surabhi,%20I%20reviewed%20your%20CSE%20portfolio%20and%20would%20love%20to%20discuss%20an%20SDE%20opportunity%20with%20you." target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <div class="contact-item-icon whatsapp-icon-bg">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="contact-label">WhatsApp (Instant Connect)</span>
+                                <div class="contact-val text-emerald-600">+91 7204853544</div>
+                            </div>
+                        </a>
+
+                        <a href="mailto:asurabhisubhaschandra@gmail.com" class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="contact-label">Email Address</span>
+                                <div class="contact-val">asurabhisubhaschandra@gmail.com</div>
+                            </div>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/surabhi-subhas-chandra/" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <span class="contact-label">LinkedIn Profile</span>
+                                <div class="contact-val">in/surabhi-subhas-chandra</div>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/surabhiiet-s155" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div>
+                                <span class="contact-label">GitHub Repositories</span>
+                                <div class="contact-val">github.com/surabhiiet-s155</div>
+                            </div>
+                        </a>
+
+                        <a href="https://www.instagram.com/_surabhi21.5/" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <div class="contact-item-icon instagram-icon-bg">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <span class="contact-label">Instagram Profile</span>
+                                <div class="contact-val">@_surabhi21.5</div>
+                            </div>
+                        </a>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="contact-label">Current Base</span>
+                                <div class="contact-val">Mangaluru, Karnataka, India</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick WhatsApp Pre-Written Message Buttons -->
+                    <div style="margin-top: 2rem; padding-top: 1.4rem; border-top: 1.5px dashed var(--border-warm);">
+                        <span class="contact-label" style="display: block; margin-bottom: 0.6rem;">Quick WhatsApp Templates:</span>
+                        <div class="flex gap-3" style="flex-wrap: wrap;">
+                            <button class="filter-tab" data-wa-template="hiring" style="font-size: 0.8rem; padding: 0.4rem 0.9rem;">
+                                🤝 SDE Hiring Inquiry
+                            </button>
+                            <button class="filter-tab" data-wa-template="project" style="font-size: 0.8rem; padding: 0.4rem 0.9rem;">
+                                🚀 Collaboration
+                            </button>
+                            <button class="filter-tab" data-wa-template="general" style="font-size: 0.8rem; padding: 0.4rem 0.9rem;">
+                                💬 Quick Hello
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form with Dual Email & WhatsApp Dispatch -->
+                <div class="contact-form-card shine-card">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="form-name" class="form-label">Your Name *</label>
+                            <input type="text" id="form-name" class="form-control" placeholder="e.g. Alex Johnson" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-email" class="form-label">Your Email *</label>
+                            <input type="email" id="form-email" class="form-control" placeholder="e.g. alex@company.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-subject" class="form-label">Subject</label>
+                            <input type="text" id="form-subject" class="form-control" placeholder="e.g. SDE Internship Opportunity">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-message" class="form-label">Your Message *</label>
+                            <textarea id="form-message" class="form-control" placeholder="Write your message or inquiry here..." required></textarea>
+                        </div>
+
+                        <!-- Dual Action Buttons -->
+                        <div class="dual-send-actions">
+                            <button type="button" id="btn-send-email" class="btn-send-email">
+                                <i class="fa-solid fa-paper-plane"></i> Send via Email
+                            </button>
+                            <button type="button" id="btn-send-whatsapp" class="btn-send-whatsapp">
+                                <i class="fa-brands fa-whatsapp"></i> Send on WhatsApp
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-text">
+                Designed & Built with <span class="floral-accent">✿</span> and 3D Golden Starfield by <strong>Surabhi Subhas Chandra</strong> • 3rd Year CSE Undergraduate 2026
+            </div>
+            <div class="flex items-center gap-3 flex-wrap">
+                <a href="https://www.instagram.com/_surabhi21.5/" target="_blank" rel="noopener noreferrer" class="footer-back-top" style="display: inline-flex; align-items: center; gap: 0.4rem;" title="Follow on Instagram">
+                    <i class="fa-brands fa-instagram" style="color: #e1306c;"></i> @_surabhi21.5
+                </a>
+                <a href="https://wa.me/917204853544" target="_blank" rel="noopener noreferrer" class="footer-back-top" style="display: inline-flex; align-items: center; gap: 0.4rem;" title="Chat on WhatsApp">
+                    <i class="fa-brands fa-whatsapp" style="color: #10b981;"></i> WhatsApp
+                </a>
+                <a href="#hero" class="footer-back-top">
+                    Back to Top <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Certificate / Achievement Modal -->
+    <div class="modal-overlay" id="cert-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-badge" class="mb-2"></div>
+            <h3 id="modal-title" class="text-2xl font-bold text-dark mb-1">Certificate Title</h3>
+            <div id="modal-issuer" class="text-orange-600 font-bold text-sm mb-3">Issuing Organization</div>
+
+            <div class="modal-details-grid">
+                <div class="modal-detail-item">
+                    <span class="meta-k">Date / Duration</span>
+                    <span class="meta-v" id="modal-date">April 2026</span>
+                </div>
+                <div class="modal-detail-item">
+                    <span class="meta-k">Credential ID / Grade</span>
+                    <span class="meta-v font-mono text-xs" id="modal-credential-id">N/A</span>
+                </div>
+            </div>
+
+            <div id="modal-media"></div>
+
+            <p id="modal-description" class="text-slate-300 text-sm leading-relaxed mb-6">
+                Certificate description goes here.
+            </p>
+
+            <div class="flex justify-end gap-3">
+                <a href="#" id="modal-action-btn" class="btn-primary" target="_blank">
+                    <i class="fa-solid fa-file-arrow-down"></i> View Credential
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <!-- Scripts: Three.js CDN, 3D Stars, Cursor Glow, Main -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/stars.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
